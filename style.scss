@@ -1,0 +1,82 @@
+*, 
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{scroll-behavior: smooth;}
+
+section{
+    width: 100%;
+    height: 100vh;
+    color: white;
+
+    &#about{background-color: #f44336;}
+    &#products{background-color: #4CAF50;}
+    &#services{background-color: #ff9800;}
+    &#contact{background-color: #607d8b;}
+}
+
+
+div#open{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    margin: 40px;
+    z-index: 9999;
+    background-color: black;
+    border-radius: 50%;
+    transition: background-color 600ms;
+
+    &:hover{background-color: #999;}
+   
+
+    svg{
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        rect{
+            fill: white;
+            transform-box: fill-box;
+
+        } 
+        .a{
+            transform: translate(10px, 11px);
+        }
+        .b{
+            transform: translate(10px, 18px);
+        }
+        .c{
+            transform: translate(10px, 25px);
+        }
+
+
+    }
+    &.clicked svg{
+        .b{opacity: 0;}
+    }
+}
+
+
+
+nav#nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+
+    ul{
+        display: flex;
+    
+        li{
+            padding: 20px;
+        }
+    }
+}
+
