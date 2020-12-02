@@ -6,12 +6,25 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
 html{scroll-behavior: smooth;}
 
 section{
     width: 100%;
     height: 100vh;
     color: white;
+    transition: opacity 2s;
+
+    body.clicked &{
+        opacity: 0.7;
+
+    }
 
     &#about{background-color: #f44336;}
     &#products{background-color: #4CAF50;}
@@ -50,6 +63,10 @@ div#open{
         }
         .b{
             transform: translate(10px, 18px);
+            
+            body.clicked & {
+                opacity: 0;
+            }
         }
         .c{
             transform: translate(10px, 25px);
@@ -57,25 +74,30 @@ div#open{
 
 
     }
-    &.clicked svg{
-        .b{opacity: 0;}
-    }
 }
 
 
 
 nav#nav{
     position: fixed;
+    display: flex; justify-content: center; align-items: center;
     top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f2f2f2;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    background-color: #999;
+    color: white;
+    transition: right 500ms;
+    
+    body.clicked &{right: 0;}
 
     ul{
-        display: flex;
     
         li{
             padding: 20px;
+            list-style: none;
+            
+            
         }
     }
 }
